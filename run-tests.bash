@@ -8,16 +8,21 @@ function die {
 [[ -n "$JSSHELL" ]] || die "Must set JSSHELL"
 [[ -e "$JSSHELL" ]] || die "'$JSSHELL' does not exist"
 
+PLAIN=$(  echo -en '\e[0m')
+BOLD=$(   tput bold)
+RED=$(    tput setaf 1)
+GREEN=$(  tput setaf 2)
+
 TOTAL=0;
 FAILS=0;
 
 for f in tests/*.js; do
   TOTAL=$((TOTAL + 1))
-  echo -n "$f ";
+  printf "%-26s " $f;
   if { $JSSHELL -m $f; } &> /dev/null; then
-    echo "PASS";
+    echo "${GREEN}PASS${PLAIN}";
   else
-    echo "FAIL";
+    echo "${BOLD}${RED}FAIL${PLAIN}";
     FAILS=$((FAILS + 1))
   fi
 done
