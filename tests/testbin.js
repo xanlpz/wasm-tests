@@ -1,4 +1,4 @@
-import { instantiate } from "/home/xan/js/wasm/wabt-wrapper.js";
+import { instantiate } from "../lib/wabt-wrapper.js";
 
 function dec2bin(dec) {
   return (dec >>> 0).toString(2);

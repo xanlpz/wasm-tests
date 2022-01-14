@@ -1,14 +1,16 @@
-import { instantiate } from "/home/xan/js/wasm/wabt-wrapper.js";
+import { instantiate } from "../lib/wabt-wrapper.js";
 
 let instance = instantiate(`
 (module
- (func $ret (result f64)
-       f64.const 0.5)
- (export "watret" (func $ret)))
+ (func $sub (result f32)
+       f32.const 0.5
+       f32.const 1.0
+       f32.sub)
+ (export "watsub" (func $sub)))
 `);
 
 for (let i = 0; i < 10; i++) {
-let result = instance.exports.watret();
+let result = instance.exports.watsub();
 if (!(result == 0.5)) {
     throw new Error("Result should be 0.5, instead was: " + result);
 } else {

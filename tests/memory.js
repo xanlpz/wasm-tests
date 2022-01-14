@@ -1,4 +1,4 @@
-import { instantiate } from "/home/xan/js/wasm/wabt-wrapper.js";
+import { instantiate } from "../lib/wabt-wrapper.js";
 
 var memory = new WebAssembly.Memory({initial:1, maximum:10});
 

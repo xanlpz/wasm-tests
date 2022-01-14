@@ -1,11 +1,11 @@
-import { instantiate } from "/home/xan/js/wasm/wabt-wrapper.js";
+import { instantiate } from "../lib/wabt-wrapper.js";
 
 let instance = instantiate(`
 (module
- (func $add (result f64)
-       f64.const 0.5
-       f64.const 1.0
-       f64.add)
+ (func $add (result f32)
+       f32.const 0.5
+       f32.const 1.0
+       f32.add)
  (export "watadd" (func $add)))
 `);
 

@@ -1,5 +1,5 @@
-//import { instantiate } from "./wasm/wabt-wrapper.js";
-import { instantiate } from "/home/xan/js/wasm/wabt-wrapper.js";
+//import { instantiate } from "./was../lib/wabt-wrapper.js";
+import { instantiate } from "../lib/wabt-wrapper.js";
 
 let instance = instantiate(`
 (module
