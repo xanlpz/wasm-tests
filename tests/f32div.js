@@ -3,8 +3,8 @@ import { instantiate } from "../lib/wabt-wrapper.js";
 let instance = instantiate(`
 (module
  (func $div (result f32)
-       f32.const 5.0
        f32.const 30.0
+       f32.const 5.0
        f32.div)
  (export "watdiv" (func $div)))
 `);
