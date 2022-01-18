@@ -22,8 +22,9 @@ let instance = instantiate(`
 `);
 
 for (let i = 0; i < 10; i++) {
-    if (!Object.is(instance.exports.watstackargs(1, 2, 3, 4, 5, 6, 7, 8), 36))
-        throw new Error();
+    let result = instance.exports.watstackargs(1, 2, 3, 4, 5, 6, 7, 8);
+    if (!Object.is(result, 36))
+        throw new Error("Result should be 36, instead was " + result);
     else
         print("Success!");
 }
