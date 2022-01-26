@@ -11,9 +11,9 @@ let instance = instantiate(`
 
 for (let i = 0; i < 10; i++) {
 let result = instance.exports.watsub();
-if (!(result == 0.5)) {
-    throw new Error("Result should be 0.5, instead was: " + result);
+if (!(result == -0.5)) {
+    throw new Error("Result should be -0.5, instead was: " + result);
 } else {
-    print("Expected: 0.5, result: " + result);
+    print("Expected: -0.5, result: " + result);
 }}
 print("Success!");
