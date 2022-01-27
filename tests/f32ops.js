@@ -56,7 +56,8 @@ class Rng {
           case 3: return -NaN;
           case 4: return +0.0;
           case 5: return -0.0;
-          case 6, 7: return this.getF32();
+          case 6: return this.getF32();
+          case 7: return this.getF32();
         }
     }
 }
