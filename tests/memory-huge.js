@@ -21,7 +21,7 @@ function check_grow(name, delta, expected) {
     throw "Bad grow, expected: " + expected + " actual: " + result;
 }
 
-check_grow("huge", 60000, -1);
+check_grow("huge", 60000, 0);
 
 // Done
 print("PASS")
